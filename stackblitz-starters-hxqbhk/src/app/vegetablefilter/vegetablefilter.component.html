@@ -1,0 +1,20 @@
+<div>
+  <input
+    type="text"
+    [(ngModel)]="filterText"
+    placeholder="Type to filter vegetables..."
+  />
+
+  <ul *ngIf="filteredVegetables.length > 0; else noResults">
+    <li
+      *ngFor="let vegetable of filteredVegetables"
+      data-test-id="filtered-vegetables"
+    >
+      {{ vegetable }}
+    </li>
+  </ul>
+
+  <ng-template #noResults>
+    <div data-test-id="no-result">No Results</div>
+  </ng-template>
+</div>
